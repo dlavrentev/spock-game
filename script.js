@@ -50,15 +50,42 @@ function computerRandomChoice() {
   } else {
     computerChoice = 'spock';
   }
-  console.log(computerChoice);
 } 
 
+// Add 'selected' styling and computer choice
+
+function displayComputerChoice() {
+  // Add 'selected' styling & playerChoice
+  switch (computerChoice) {
+    case 'rock':
+      computerRock.classList.add('selected');
+      computerChoiceEl.textContent = ' --- Rock';
+      break;
+    case 'paper':
+      computerPaper.classList.add('selected');
+      computerChoiceEl.textContent = ' --- Paper';
+      break;
+    case 'scissors':
+      computerScissors.classList.add('selected');
+      computerChoiceEl.textContent = ' --- Scissors';
+      break;
+    case 'lizard':
+      computerLizard.classList.add('selected');
+      computerChoiceEl.textContent = ' --- Lizard';
+      break;
+    case 'spock':
+      computerSpock.classList.add('selected');
+      computerChoiceEl.textContent = ' --- Spock';
+      break;
+  }
+}
 
 // Call functions to process turn
 
 function checkResult() {
     resetSelected();
     computerRandomChoice();
+    displayComputerChoice();
 }
 
 // Passing player selection value and styling icons 
