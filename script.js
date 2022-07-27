@@ -26,6 +26,8 @@ const choices = {
   spock: { name: 'Spock', defeats: ['scissors', 'rock'] },
 };
 
+let computerChoice = '';
+
 
 // Reset all 'selected' icons
 function resetSelected() {
@@ -34,10 +36,23 @@ function resetSelected() {
     });
 }
 
+// Random computer choice
+function computerRandomChoice() {
+  const computerChoiceNumber = Math.random();
+}
+
+
+// Call functions to process turn
+
+function checkResult() {
+    resetSelected();
+    computerRandomChoice();
+}
+
 // Passing player selection value and styling icons 
 
 function select(playerChoice) {
-  resetSelected();
+  checkResult();
   // Add 'selected' styling & playerChoice
   switch (playerChoice) {
     case 'rock':
