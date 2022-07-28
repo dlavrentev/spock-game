@@ -32,11 +32,13 @@ let playerScoreNumber = 0;
 let computerScoreNumber = 0;
 let computerChoice = '';
 
-// Reset all 'selected' icons
+// Reset all 'selected' icons, remove confetti
 function resetSelected() {
     allGameIcons.forEach((icon) => {
          icon.classList.remove('selected');
     });
+    stopConfetti();
+    removeConfetti();
 }
 
 // Reset Score & playerChoice/computerChoice
@@ -50,7 +52,8 @@ function resetAll() {
   computerChoiceEl.textContent = "";
   resultText.textContent = "";
   resetSelected();
-}
+} 
+window.resetAll = resetAll;
 
 // Random computer choice
 function computerRandomChoice() {
@@ -103,6 +106,7 @@ function updateScore(playerChoice) {
   } else {
     const choice = choices[playerChoice];
     if (choice.defeats.indexOf(computerChoice) > -1) {
+      startConfetti();
       resultText.textContent = "You Won!";
       playerScoreNumber++;
       playerScoreEl.textContent = playerScoreNumber;
@@ -148,7 +152,8 @@ function select(playerChoice) {
       playerChoiceEl.textContent = ' --- Spock';
       break;
   }
-}
+} 
+window.select = select;
 
 // On startup, set initial value
 resetAll();
