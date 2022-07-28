@@ -43,14 +43,14 @@ function resetSelected() {
 // Reset Score & playerChoice/computerChoice
 
 function resetAll() {
-  playerScoreEl.textContent = 0;
-  computerScoreEl.textContent = 0;
-  playerChoiceEl.textContent = " --- Choice";
-  computerChoiceEl.textContent = " --- Choice";
-  resultText.textContent = "Let's play!"
-  allGameIcons.forEach((icon) => {
-        icon.classList.remove('selected');
-  });
+  playerScoreNumber = 0;
+  computerScoreNumber = 0;
+  playerScoreEl.textContent = playerScoreNumber;
+  computerScoreEl.textContent = computerScoreNumber;
+  playerChoiceEl.textContent = "";
+  computerChoiceEl.textContent = "";
+  resultText.textContent = "";
+  resetSelected();
 }
 
 // Random computer choice
@@ -153,3 +153,7 @@ function select(playerChoice) {
       break;
   }
 }
+
+
+// On startup, set initial value
+resetAll();
