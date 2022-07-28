@@ -40,6 +40,19 @@ function resetSelected() {
     });
 }
 
+// Reset Score & playerChoice/computerChoice
+
+function resetAll() {
+  playerScoreEl.textContent = 0;
+  computerScoreEl.textContent = 0;
+  playerChoiceEl.textContent = " --- Choice";
+  computerChoiceEl.textContent = " --- Choice";
+  resultText.textContent = "Let's play!"
+  allGameIcons.forEach((icon) => {
+        icon.classList.remove('selected');
+  });
+}
+
 // Random computer choice
 function computerRandomChoice() {
   const computerChoiceNumber = Math.random();
