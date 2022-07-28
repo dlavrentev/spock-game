@@ -1,3 +1,5 @@
+import { startConfetti, stopConfetti, removeConfetti } from "./confetti.js";
+
 const playerScoreEl = document.getElementById('playerScore');
 const playerChoiceEl = document.getElementById('playerChoice');
 const computerScoreEl = document.getElementById('computerScore');
@@ -26,12 +28,9 @@ const choices = {
   spock: { name: 'Spock', defeats: ['scissors', 'rock'] },
 };
 
-
 let playerScoreNumber = 0;
 let computerScoreNumber = 0;
-
 let computerChoice = '';
-
 
 // Reset all 'selected' icons
 function resetSelected() {
@@ -70,7 +69,6 @@ function computerRandomChoice() {
 } 
 
 // Add 'selected' styling and computer choice
-
 function displayComputerChoice() {
   // Add 'selected' styling & playerChoice
   switch (computerChoice) {
@@ -117,7 +115,6 @@ function updateScore(playerChoice) {
 }
 
 // Call functions to process turn
-
 function checkResult(playerChoice) {
     resetSelected();
     computerRandomChoice();
@@ -126,7 +123,6 @@ function checkResult(playerChoice) {
 }
 
 // Passing player selection value and styling icons 
-
 function select(playerChoice) {
   checkResult(playerChoice);
   // Add 'selected' styling & playerChoice
@@ -154,6 +150,9 @@ function select(playerChoice) {
   }
 }
 
-
 // On startup, set initial value
 resetAll();
+
+
+
+  
